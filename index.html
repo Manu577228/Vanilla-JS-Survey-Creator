@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Creator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Create Your Survey</h1>
+      <form id="surveyForm">
+        <div class="form-group">
+          <label for="surveyTitle">Survey Title</label>
+          <input
+            type="text"
+            id="surveyTitle"
+            placeholder="Enter survey title"
+            value="Customer Satisfaction Survey"
+            required
+          />
+        </div>
+        <div id="questionsContainer">
+          <div class="form-group question">
+            <label>Question 1</label>
+            <input
+              type="text"
+              placeholder="Enter your question"
+              value="How satisfied are you with our service?"
+              required
+            />
+            <button
+              type="button"
+              class="remove-question"
+              onclick="removeQuestion(this)"
+            >
+              Remove
+            </button>
+          </div>
+          <div class="form-group question">
+            <label>Question 2</label>
+            <input
+              type="text"
+              placeholder="Enter your question"
+              value="How likely are you to recommend us to a friend?"
+              required
+            />
+            <button
+              type="button"
+              class="remove-question"
+              onclick="removeQuestion(this)"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+        <button type="button" id="addQuestionButton" onclick="addQuestion()">
+          Add Question
+        </button>
+        <button type="submit">Create Survey</button>
+      </form>
+      <div id="surveyOutput" class="hidden">
+        <h2>Your Survey</h2>
+        <div id="outputTitle"></div>
+        <ul id="outputQuestions"></ul>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
